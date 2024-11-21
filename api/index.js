@@ -11,6 +11,6 @@ mongoose.connect(process.env.MONGO).then(()=>{
 
 const app = express()
 
-app.listen(5000,()=>{
-    console.log('running on port 5000!!!')
+app.listen(7000,()=>{
+    console.log('running on port 7000!!!')
 })
