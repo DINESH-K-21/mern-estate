@@ -15,8 +15,8 @@ const app = express()
 
 app.use(express.json())
 
-app.listen(3500,()=>{
-    console.log('running on port 3500!!!')
+app.listen(3700,()=>{
+    console.log('running on port 3700!!!')
 })
 
 app.use('/api/user',userRouter)
