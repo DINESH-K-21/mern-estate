@@ -15,9 +15,19 @@ const app = express()
 
 app.use(express.json())
 
-app.listen(3200,()=>{
-    console.log('running on port 3200!!!')
+app.listen(3500,()=>{
+    console.log('running on port 3500!!!')
 })
 
 app.use('/api/user',userRouter)
 app.use('/api/auth',authRouter)
+
+app.use((err, req, res, next)=>{
+    const statusCode = err.statusCode||500
+    const message = err.message||'Internal Server error'
+    return res.status(statusCode).json({
+        success:false,
+        statusCode,
+        message
+    })
+})
