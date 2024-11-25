@@ -55,20 +55,20 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
-  const handleSignOut = async()=>{
+  const handleSignOut = async () => {
     try {
-      dispatch(signOutUserStart())
-      const res = await fetch('/api/auth/signout')
+      dispatch(signOutUserStart());
+      const res = await fetch('/api/auth/signout');
       const data = await res.json();
-      if (data.success === false){
-        dispatch(deleteUserFailure(data.message))
-        return
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
       }
-      dispatch(deleteUserSuccess(data))
+      dispatch(deleteUserSuccess(data));
     } catch (error) {
-      dispatch(deleteUserFailure(data.message))
+      dispatch(deleteUserFailure(data.message));
     }
-  }
+  };
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
