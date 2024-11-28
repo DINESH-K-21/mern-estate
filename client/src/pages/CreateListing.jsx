@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { supabase } from '../supabase';  // Import the Supabase client
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
